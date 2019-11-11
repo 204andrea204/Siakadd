@@ -30,7 +30,7 @@
           	@foreach($images as $j)
             <tr>
               <td>{{ $loop->iteration }}</td>
-              <td><img src="{{ storage_path('images/'.$j->images) }}" class="img-mini"></td>
+              <td><img src="{{ asset('foto/galeri/'.$j->image) }}" style="width: 100px;height: 100px;"></td>
               <td>
                 <a href="/galeri/delete/{{$j->id}}" class="btn btn-outline-danger">
                   <i class="far fa-trash-alt"></i>

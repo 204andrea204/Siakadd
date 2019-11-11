@@ -27,7 +27,7 @@ class ImageController extends Controller
       foreach($files as $g) {
         $gambar2 = date("YmdHis").uniqid()."."
         .$g->getClientOriginalExtension();
-        $g->move(storage_path('images'), $gambar2);
+        $g->move("foto/galeri", $gambar2);
         Image::create([
             'image' => $gambar2,
           ]);
