@@ -17,14 +17,16 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.0/css/buttons.dataTables.min.css">
 
-  <link href="/sb_admin2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="{{asset('sb_admin2/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="/sb_admin2/css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="icon" href="/not_found/10.jpg"  type="image/x-icon"/>
+  <link href="{{asset('sb_admin2/css/sb-admin-2.min.css')}}" rel="stylesheet">
+  <link rel="icon" href="{{asset('not_found/10.jpg')}}"  type="image/x-icon"/>
 
-  <link href="/sb_admin2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="{{asset('/sb_admin2/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="{{ asset('css/customDataTable.css') }}">
   <link href="{{ asset('css/custom-sb-admin.css') }}" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -53,7 +55,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="/suadmin">
+        <a class="nav-link" href="{{url('/suadmin')}}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -69,9 +71,9 @@
       <!-- Nav Item - Pages Collapse Menu -->
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="user-admin">
+        <a class="nav-link" href="{{url('prestasi')}}">
           <i class="fas fa-user-plus"></i>
-          <span>User</span></a>
+          <span>Prestasi</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo1" aria-expanded="true" aria-controls="collapseTwo">
@@ -80,8 +82,8 @@
         </a>
         <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="/guru"><i class="fas fa-users-cog"></i>&emsp;Data Guru</a>
-            <a class="collapse-item" href="/mapel"><i class="fas fa-users-cog"></i>&emsp;Data Mata Pelajaran</a>
+            <a class="collapse-item" href="{{url('guru')}}"><i class="fas fa-users-cog"></i>&emsp;Data Guru</a>
+            <a class="collapse-item" href="{{url('mapel')}}"><i class="fas fa-users-cog"></i>&emsp;Data Mata Pelajaran</a>
           </div>
         </div>
       </li>
@@ -92,8 +94,8 @@
         </a>
         <div id="collapseTwo0" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="/siswa"><i class="fas fa-users-cog"></i>&emsp;Data Siswa</a>
-            <a class="collapse-item" href="/jurusan"><i class="fas fa-users-cog"></i>&emsp;Data Jurusan</a>
+            <a class="collapse-item" href="{{url('siswa')}}"><i class="fas fa-users-cog"></i>&emsp;Data Siswa</a>
+            <a class="collapse-item" href="{{url('jurusan')}}"><i class="fas fa-users-cog"></i>&emsp;Data Jurusan</a>
           </div>
         </div>
       </li>
@@ -104,30 +106,29 @@
         </a>
         <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="/ekskul"><i class="fas fa-users-cog"></i>&emsp;Data Ekstrakulikuler</a>
-            <a class="collapse-item" href="/sekbid"><i class="fas fa-users-cog"></i>&emsp;Data Sekbid</a>
+            <a class="collapse-item" href="{{url('ekskul')}}"><i class="fas fa-users-cog"></i>&emsp;Data Ekstrakulikuler</a>
+            <a class="collapse-item" href="{{url('sekbid')}}"><i class="fas fa-users-cog"></i>&emsp;Data Sekbid</a>
           </div>
         </div>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link" href="/berita">
+        <a class="nav-link" href="{{url('berita')}}">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Berita</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/visimisi">
+        <a class="nav-link" href="{{url('visimisi')}}">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Visi Dan Misi</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/galeri">
+        <a class="nav-link" href="{{url('galeri')}}">
           <i class="fas fa-images"></i>
           <span>Galeri</span></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="/halaman">
+        <a class="nav-link" href="{{url('halaman')}}">
           <i class="fas fa-sign-out-alt"></i>
           <span>Keluar</span></a>
       </li>
@@ -199,7 +200,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Andrea</span>
-                <img class="img-profile rounded-circle" src="/not_found/10.jpg">
+                <img class="img-profile rounded-circle" src="{{asset('not_found/10.jpg')}}">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -276,28 +277,28 @@
   </div>  
 
   <!-- Bootstrap core JavaScript-->
-  <script src="/sb_admin2/vendor/jquery/jquery.min.js"></script>
-  <script src="/sb_admin2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{asset('/sb_admin2/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('/sb_admin2/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="/sb_admin2/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="{{asset('/sb_admin2/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="/sb_admin2/js/sb-admin-2.min.js"></script>
+  <script src="{{asset('/sb_admin2/js/sb-admin-2.min.js')}}"></script>
 
   <!-- Page level plugins -->
-  <script src="/sb_admin2/vendor/chart.js/Chart.min.js"></script>
+  <script src="{{asset('/sb_admin2/vendor/chart.js/Chart.min.js')}}"></script>
 
   <!-- Page level custom scripts -->
-  <script src="/sb_admin2/js/demo/chart-area-demo.js"></script>
-  <script src="/sb_admin2/js/demo/chart-pie-demo.js"></script>
+  <script src="{{asset('/sb_admin2/js/demo/chart-area-demo.js')}}"></script>
+  <script src="{{asset('/sb_admin2/js/demo/chart-pie-demo.js')}}"></script>
 
     <!-- Page level plugins -->
-  <script src="/sb_admin2/vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="/sb_admin2/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="{{asset('/sb_admin2/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('/sb_admin2/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
   <!-- Page level custom scripts -->
-  <script src="/sb_admin2/js/demo/datatables-demo.js"></script>
+  <script src="{{asset('/sb_admin2/js/demo/datatables-demo.js')}}"></script>
 
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.0/js/dataTables.buttons.min.js"></script>
@@ -320,7 +321,7 @@
 </script>
 
 
-<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
     <script>
         CKEDITOR.replace( 'ckeditor1' );
     </script>

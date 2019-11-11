@@ -10,6 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/images/{filename}', function ($filename) {
+    $path = storage_path('images') . '/' . $filename;
+    $file = File::get($path);
+    $type = File::mimeType($path);
+    $response = Response::make($file);
+    $response->header("Content-Type", $type);
+    return $response;
+});
 
 Route::get('/suadmin', function () {
     return view('suadmin.index');
@@ -92,14 +100,20 @@ Route::prefix('ekskul')->group(function(){
 	Route::get('/delete/{id}', 'EkskulController@delete');
 	});
 
+Route::prefix('prestasi')->group(function(){
+	Route::get('/', 'PrestasiController@index');
+	Route::post('/add', 'PrestasiController@add');
+	Route::get('/tambah', 'PrestasiController@tambah');
+    Route::get('/edit/{id}', 'PrestasiController@edit');
+    Route::post('/update', 'PrestasiController@update');
+	Route::get('/delete/{id}', 'PrestasiController@delete');
+	});
+
 Route::prefix('galeri')->group(function(){
 	Route::get('/', 'ImageController@index');
-	Route::post('/upload', 'ImageController@store');
 	Route::post('/add', 'ImageController@add');
-	Route::get('/tambah', 'ImageController@tambah');
-    Route::get('/edit/{id}', 'ImageController@edit');
-    Route::post('/update', 'ImageController@update');
 	Route::get('/delete/{id}', 'ImageController@delete');
+ 	Route::post('/save', 'ImageController@save');
 	});
 	
 Route::prefix('visimisi')->group(function(){
